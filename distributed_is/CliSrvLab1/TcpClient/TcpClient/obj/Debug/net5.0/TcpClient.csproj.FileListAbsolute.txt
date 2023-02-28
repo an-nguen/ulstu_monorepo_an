@@ -1,0 +1,16 @@
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\bin\Debug\net5.0\TcpClient.exe
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\bin\Debug\net5.0\TcpClient.deps.json
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\bin\Debug\net5.0\TcpClient.runtimeconfig.json
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\bin\Debug\net5.0\TcpClient.runtimeconfig.dev.json
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\bin\Debug\net5.0\TcpClient.dll
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\bin\Debug\net5.0\ref\TcpClient.dll
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\bin\Debug\net5.0\TcpClient.pdb
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\TcpClient.csprojAssemblyReference.cache
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\TcpClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\TcpClient.AssemblyInfoInputs.cache
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\TcpClient.AssemblyInfo.cs
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\TcpClient.csproj.CoreCompileInputs.cache
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\TcpClient.dll
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\ref\TcpClient.dll
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\TcpClient.pdb
+C:\Users\an\source\repos\CliSrvLab1\TcpClient\TcpClient\obj\Debug\net5.0\TcpClient.genruntimeconfig.cache

@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <link rel="stylesheet" href="bootstrap.css"/>
+</head>
+<body>
+
+<style>
+    .col {
+        background-color: #cecece;
+        border: 1px solid rgba(86, 61, 124, .2);
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+    }
+</style>
+<div class="container">
+    <div class='main-body' id='first'>
+        <h2>Заполнение компонета select динамическими значениями</h2>
+        <div class="form-group">
+            <label>Выберите значение</label>
+            <select class="form-control" id="dynamicValuesSelect">
+
+            </select>
+        </div>
+        <div>
+            Список элементов
+            <ul id="listValues">
+
+            </ul>
+        </div>
+
+        <h2>Динамическое создание форм</h2>
+        <div>
+            <form id="emptyForm">
+
+            </form>
+        </div>
+
+        <h2>Bootstrap</h2>
+
+        <a href="https://getbootstrap.com/docs/4.3/layout/grid/" class="btn btn-primary btn-lg active" role="button"
+           aria-pressed="true">Bootstrap grid</a>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+                1 of 3
+            </div>
+            <div class="col col-md-auto">
+                Variable width content
+            </div>
+            <div class="col col-lg-2">
+                3 of 3
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                1 of 3
+            </div>
+            <div class="col col-md-auto">
+                Variable width content
+            </div>
+            <div class="col col-lg-2">
+                3 of 3
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="jquery-3.1.1.min.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="main.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        // заполнить select значениями из массива
+        var arrayValues = {
+            0: {id: 1, name: "one"},
+            1: {id: 10, name: "two"},
+            2: {id: 20, name: "three"}
+        };
+        fillSelect("#dynamicValuesSelect", arrayValues);
+
+        //заполнить list
+        get("http://193.110.3.124/api/1.0/fio", function (response) {
+            $.each(response, function (index, arrayValue) {
+                $("#listValues").append("<li>" + arrayValue + "</li>");
+            });
+        });
+
+        id = "listValues"
+
+        //создание элементов формы
+
+        $("#emptyForm")
+            .append(createInputWithLabel("Фамилия", "lastName"))
+            .append(createInputWithLabel("Имя", "firstName"))
+            .append("<input type='button' id='submit' value='отправить'/>");
+
+        //ajax
+
+        $("#submit").click(function () {
+
+            var postData = {
+                "lastName": $("#lastName").val(),
+                "firstName": $("#firstName").val()
+            };
+
+            post("http://193.110.3.124/api/1.0/fio", postData, function (data) {
+                $("<li>" + data + "</li>").hide().appendTo("#listValues").show('slow');
+            });
+        });
+    });
+
+</script>
+</body>
+</html>

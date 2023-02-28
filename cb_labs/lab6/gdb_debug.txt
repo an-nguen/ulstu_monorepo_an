@@ -1,0 +1,89 @@
+Dump of assembler code for function main:
+   0x0000000000401120 <+0>:     push   %rbp
+   0x0000000000401121 <+1>:     mov    %rsp,%rbp
+   0x0000000000401124 <+4>:     lea    -0x10(%rsp),%rsp
+   0x0000000000401129 <+9>:     mov    %rbx,-0x8(%rbp)
+   0x000000000040112d <+13>:    callq  0x418050 <fpc_initializeunits>
+   0x0000000000401132 <+18>:    movw   $0xd,0x432b00
+   0x000000000040113c <+28>:    movw   $0x10,0x432b10
+   0x0000000000401146 <+38>:    movabs $0x432b20,%rax
+   0x0000000000401150 <+48>:    movabs $0x432b10,%rsi
+   0x000000000040115a <+58>:    movswl 0x432b00,%edi
+   0x0000000000401162 <+66>:    mov    %rax,%rdx
+   0x0000000000401165 <+69>:    callq  0x4010a0 <MY_PROCEDURE>
+   0x000000000040116a <+74>:    mov    $0x5,%edi
+   0x000000000040116f <+79>:    callq  0x4010d0 <FACTORIAL>
+   0x0000000000401174 <+84>:    movabs %ax,0x432b30
+   0x000000000040117e <+94>:    callq  0x41dd50 <fpc_get_output>
+   0x0000000000401183 <+99>:    mov    %rax,%rbx
+   0x0000000000401186 <+102>:   movabs $0x428000,%rdx
+   0x0000000000401190 <+112>:   mov    %rbx,%rsi
+   0x0000000000401193 <+115>:   mov    $0x0,%edi
+   0x0000000000401198 <+120>:   callq  0x41e100 <fpc_write_text_shortstr>
+   0x000000000040119d <+125>:   movswq 0x432b20,%rdx
+   0x00000000004011a6 <+134>:   mov    %rbx,%rsi
+   0x00000000004011a9 <+137>:   mov    $0x0,%edi
+   0x00000000004011ae <+142>:   callq  0x41eab0 <fpc_write_text_sint>
+   0x00000000004011b3 <+147>:   mov    %rbx,%rdi
+   0x00000000004011b6 <+150>:   callq  0x41e000 <fpc_writeln_end>
+   0x00000000004011bb <+155>:   callq  0x41dd50 <fpc_get_output>
+   0x00000000004011c0 <+160>:   mov    %rax,%rbx
+   0x00000000004011c3 <+163>:   movabs $0x428010,%rdx
+   0x00000000004011cd <+173>:   mov    %rbx,%rsi
+   0x00000000004011d0 <+176>:   mov    $0x0,%edi
+   0x00000000004011d5 <+181>:   callq  0x41e100 <fpc_write_text_shortstr>
+   0x00000000004011da <+186>:   movswq 0x432b30,%rdx
+   0x00000000004011e3 <+195>:   mov    %rbx,%rsi
+   0x00000000004011e6 <+198>:   mov    $0x0,%edi
+   0x00000000004011eb <+203>:   callq  0x41eab0 <fpc_write_text_sint>
+   0x00000000004011f0 <+208>:   mov    %rbx,%rdi
+   0x00000000004011f3 <+211>:   callq  0x41e000 <fpc_writeln_end>
+   0x00000000004011f8 <+216>:   callq  0x41dd10 <fpc_get_input>
+   0x00000000004011fd <+221>:   mov    %rax,%rbx
+   0x0000000000401200 <+224>:   mov    %rbx,%rdi
+   0x0000000000401203 <+227>:   callq  0x41fc40 <fpc_readln_end>
+   0x0000000000401208 <+232>:   callq  0x4184a0 <fpc_do_exit>
+   0x000000000040120d <+237>:   mov    -0x8(%rbp),%rbx
+   0x0000000000401211 <+241>:   leaveq 
+   0x0000000000401212 <+242>:   retq   
+ 
+ Dump of assembler code for function FACTORIAL:
+   0x00000000004010d0 <+0>:     push   %rbp
+   0x00000000004010d1 <+1>:     mov    %rsp,%rbp
+   0x00000000004010d4 <+4>:     lea    -0x20(%rsp),%rsp
+   0x00000000004010d9 <+9>:     mov    %rbx,-0x18(%rbp)
+   0x00000000004010dd <+13>:    mov    %di,-0x8(%rbp)
+   0x00000000004010e1 <+17>:    cmpw   $0x0,-0x8(%rbp)
+   0x00000000004010e7 <+23>:    jg     0x4010eb <FACTORIAL+27>
+   0x00000000004010e9 <+25>:    jmp    0x40110c <FACTORIAL+60>
+   0x00000000004010eb <+27>:    movswl -0x8(%rbp),%ebx
+   0x00000000004010ef <+31>:    movswl -0x8(%rbp),%edi
+   0x00000000004010f3 <+35>:    dec    %edi
+   0x00000000004010f5 <+37>:    movswl %di,%edi
+   0x00000000004010f8 <+40>:    callq  0x4010d0 <FACTORIAL>
+   0x00000000004010fd <+45>:    movswl %ax,%eax
+   0x0000000000401100 <+48>:    imul   %eax,%ebx
+   0x0000000000401103 <+51>:    mov    %bx,%ax
+   0x0000000000401106 <+54>:    mov    %ax,-0xc(%rbp)
+   0x000000000040110a <+58>:    jmp    0x401112 <FACTORIAL+66>
+   0x000000000040110c <+60>:    movw   $0x1,-0xc(%rbp)
+   0x0000000000401112 <+66>:    movswl -0xc(%rbp),%eax
+   0x0000000000401116 <+70>:    mov    -0x18(%rbp),%rbx
+   0x000000000040111a <+74>:    leaveq 
+   0x000000000040111b <+75>:    retq 
+   
+Dump of assembler code for function MY_PROCEDURE:
+   0x00000000004010a0 <+0>:     push   %rbp
+   0x00000000004010a1 <+1>:     mov    %rsp,%rbp
+   0x00000000004010a4 <+4>:     lea    -0x20(%rsp),%rsp
+   0x00000000004010a9 <+9>:     mov    %di,-0x8(%rbp)
+   0x00000000004010ad <+13>:    mov    %rsi,-0x10(%rbp)
+   0x00000000004010b1 <+17>:    mov    %rdx,-0x18(%rbp)
+   0x00000000004010b5 <+21>:    mov    -0x10(%rbp),%rax
+   0x00000000004010b9 <+25>:    movswl (%rax),%eax
+   0x00000000004010bc <+28>:    movswl -0x8(%rbp),%edx
+   0x00000000004010c0 <+32>:    lea    (%eax,%edx,1),%eax
+   0x00000000004010c4 <+36>:    mov    -0x18(%rbp),%rdx
+   0x00000000004010c8 <+40>:    mov    %ax,(%rdx)
+   0x00000000004010cb <+43>:    leaveq 
+   0x00000000004010cc <+44>:    retq  

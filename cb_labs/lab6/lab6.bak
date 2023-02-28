@@ -1,0 +1,28 @@
+{$asmmode intel}
+var x, y, z, h, k, res1, res2: integer;
+
+procedure my_procedure(a, e: integer; var b, c, d, sum: integer);
+begin
+  sum := a + b + c + d
+end;
+
+function factorial(value: integer) : integer;
+begin
+  if value > 0 then
+    factorial := value * factorial(value - 1)
+  else
+    factorial := 1;
+end;
+
+begin
+  x := 13;
+  y := 16;
+  z := 20;
+  h := 10;
+  k := 40;
+  my_procedure(x, y, z, h, k, res1);
+  //res2 := factorial(5);
+  writeln('res1 = ', res1);
+  writeln('res2 = ', res2);
+  readln();
+end.

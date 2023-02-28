@@ -1,0 +1,69 @@
+{$asmmode intel}
+var x, y : integer;
+
+begin
+  x := 4;
+  y := 3;
+  asm
+    // AND Logical bitwise multiplication
+    mov ebx, 00001011b
+    mov edx, 00011010b
+    and ebx, edx  // dest = dest AND src
+    nop
+    // TEST Check bits or analog of operation AND
+    mov ebx, 00001000b
+    test ebx, 00001000b
+    nop
+    // XOR (0^0=0; 0^1=1; 1^0=0; 1^1=0)
+    mov ebx, 00001011b // 0Bh
+    xor ebx, ebx // = 0h
+    nop
+    // NOT Logic negation
+    mov dx, 0
+    not dx
+    nop
+    // OR Logical addition
+    mov ebx, 00001001b
+    or edx, 11110110b
+    nop
+    // RCL A cyclic shift to the left by flag C (value of high bit->C, value of flag C-> low bit)
+    mov bl, 01000110b // 46h, C=0
+    rcl bl, 2 // destination, count
+    nop       // after rcl -> C=1, 00011000b=18h
+    // RCR A cyclic shift to the right by flag C (low bit->C, C->high bit)
+    cmc // C=0
+    rcr bl, 1 // if C=1 -> 10001100b=8Ch else if C=0 -> 00001100b=0Ch
+    nop
+    // ROL cyclic shift to the left, if count != 1 overflow flag is not determined
+    // if count == 1 -> flag O = 2 high bits (7 and 6 index) XOR destination
+    // old value of high bit copy to low bit and to flag C
+    mov dl, 10100110b
+    rol dl, 1
+    nop
+    // ROR ROL_COMMENTARY + to the right
+    cmc
+    ror dl, 1
+    nop
+    // SHL Logical shift left
+    // high bit -> flag C
+    // if count != 1 -> flag O is not determined
+    // if count == 1 -> flag O = 0 if 2 high bits of source == destination, else O = 1
+    // low bit = 0
+    mov bl, 10101010b
+    shl bl, 1 // 01010100b, C=1
+    nop
+    // SHR Logical shift right
+    // high bit = 0
+    // flag C = copy of low bit
+    shr bl, 1
+    nop
+    // SAL Arithmetical shift left == SHL Logical shift left
+    mov bl, 00000001b
+    sal bl, 1
+    nop
+    // SAR Arithmetical shift right
+    mov bl, 10000000b
+    sar bl, 1 // 11000000b
+    nop
+  end;
+end.

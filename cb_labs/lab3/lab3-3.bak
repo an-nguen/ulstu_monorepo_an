@@ -1,0 +1,8 @@
+{$asmmode intel}
+var i : integer;
+
+begin
+  asm
+
+  end;
+end.

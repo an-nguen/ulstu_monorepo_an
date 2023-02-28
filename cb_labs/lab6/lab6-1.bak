@@ -1,0 +1,37 @@
+{$asmmode intel}
+var m0, m1, m2, m3: integer;
+
+procedure proc(x: integer; var y, z, h: integer);
+begin
+  writeln(x);
+  writeln(y);
+  writeln(z);
+  writeln(h);
+end;
+
+begin
+  asm
+    xor eax, eax
+    xor ecx, ecx
+    xor edx, edx
+
+    mov m0, 5
+    mov m1, 13
+    mov m2, 20
+    mov m3, 42
+
+    push m3
+    lea ecx, m2
+    lea edx, m1
+    mov ax, m0
+
+    call proc
+
+    // ret:
+    // pop ip
+    // pop cs
+    // sp = sp + number
+
+  end;
+  readln();
+end.

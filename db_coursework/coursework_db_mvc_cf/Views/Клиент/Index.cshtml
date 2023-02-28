@@ -1,0 +1,111 @@
+﻿@model coursework_db_mvc_cf.Models.КлиентFindModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Список клиентов</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h3>Поиск и фильтрация</h3>
+    <div class="form-row mb-2">
+        <div class="col-auto">
+            @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Фамилия" } })
+        </div>
+        <div class="col-auto">
+            @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Имя" } })
+        </div>
+        <div class="col-auto">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Почта" } })
+        </div>
+        <div class="col-auto">
+            @Html.EditorFor(model => model.Serie, new { htmlAttributes = new { @class = "form-control", @placeholder = "Серия" } })
+        </div>
+        <div class="col-auto">
+            @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control", @placeholder = "Номер" } })
+        </div>
+    </div>
+    <div class="col-auto mb-2">
+        <input type="submit" value="Поиск" class="btn btn-secondary" />
+    </div>
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Фамилия
+            </th>
+            <th>
+                Имя
+            </th>
+            <th>
+                Отчество
+            </th>
+            <th>
+                Почта
+            </th>
+            <th>
+                Дата рождения
+            </th>
+            <th>
+                Серия
+            </th>
+            <th>
+                Номер
+            </th>
+            <th>
+                Туры
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (var i = 0; i < Model.clients.Count(); i++)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.clients[i].клиент.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.clients[i].клиент.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.clients[i].клиент.Отчество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.clients[i].клиент.Почта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.clients[i].клиент.Дата_рождения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.clients[i].клиент.Серия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.clients[i].клиент.Номер)
+            </td>
+            <td>
+                @for (int j = 0; j < Model.clients[i].checkBoxList.Count(); j++)
+                {
+                    <div class="form-check">
+                        @Html.HiddenFor(m => Model.clients[i].checkBoxList[j].id)
+                        @Html.HiddenFor(m => Model.clients[i].checkBoxList[j].Checked)
+                        @Html.DisplayFor(m => Model.clients[i].checkBoxList[j].name, new { htmlAttributes = new { @class = "form-check-label" } })
+                    </div>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", new { id = Model.clients[i].клиент.ИД }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = Model.clients[i].клиент.ИД })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

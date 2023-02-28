@@ -1,0 +1,60 @@
+﻿@model coursework_db_mvc_cf.Models.АдресFindModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Список адресов</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h3>Поиск и фильтрация</h3>
+    <div class="form-row mb-2">
+        <div class="col-auto">
+            @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control", @placeholder = "Страна" } })
+        </div>
+        <div class="col-auto">
+            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", @placeholder = "Город" } })
+        </div>
+
+    </div>
+    <div class="col-auto mb-2">
+        <input type="submit" value="Поиск" class="btn btn-secondary" />
+    </div>
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.адресы)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Страна)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Город)
+                </td>
+                <td>
+                    @Html.ActionLink("Изменить", "Edit", new { id = item.ИД }) |
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.ИД })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

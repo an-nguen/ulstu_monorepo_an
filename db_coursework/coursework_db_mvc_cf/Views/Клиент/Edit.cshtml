@@ -1,0 +1,115 @@
+﻿@model coursework_db_mvc_cf.Models.КлиентViewModel
+
+@{
+    ViewBag.Title = "Редактирование";
+}
+
+<h2>Изменение</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Клиент</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.клиент.ИД)
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.Фамилия, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.Фамилия, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.Фамилия, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.Имя, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.Имя, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.Имя, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.Отчество, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.Отчество, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.Отчество, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.Почта, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.Почта, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.Почта, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.Дата_рождения, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.Дата_рождения, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.Дата_рождения, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.Серия, "Серия", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.Серия, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.Серия, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.Номер, "Номер", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.Номер, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.Номер, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.ДействителенДо, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.ДействителенДо, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.ДействителенДо, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.клиент.ДатаВыдачиПасспорта, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.клиент.ДатаВыдачиПасспорта, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.клиент.ДатаВыдачиПасспорта, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.checkBoxList, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @for (int i = 0; i < Model.checkBoxList.Count(); i++)
+            {
+                <div class="form-check">
+                    @Html.HiddenFor(m => Model.checkBoxList[i].id)
+                    @Html.CheckBoxFor(m => Model.checkBoxList[i].Checked, new { htmlAttributes = new { @class = "form-check-input" } })
+                    @Html.DisplayFor(m => Model.checkBoxList[i].name, new { htmlAttributes = new { @class = "form-check-label" } })
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Сохранить" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Вернуться к списку", "Index")
+</div>

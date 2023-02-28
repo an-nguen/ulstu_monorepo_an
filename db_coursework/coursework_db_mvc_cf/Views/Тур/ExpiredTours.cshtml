@@ -1,0 +1,57 @@
+﻿@model IEnumerable<coursework_db_mvc_cf.Models.DB.Тур>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Туры с просроченным билетом</h2>
+
+<p>
+    @Html.ActionLink("Вернуьтся назад", "Index")
+</p>
+
+
+@foreach (var item in Model) {
+    <div class="card">
+        <div class="card-header">
+            @Html.DisplayFor(modelItem => item.Место_отдыха.Название)
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Тур # @Html.DisplayFor(modelItem => item.ИД)</h5>
+            <p class="card-text">@Html.DisplayNameFor(model => model.Вкл_гида) - @Html.DisplayFor(modelItem => item.Вкл_гида)</p>
+            <p class="card-text">@Html.DisplayNameFor(model => model.Вкл_ночёвка) - @Html.DisplayFor(modelItem => item.Вкл_ночёвка)</p>
+            <p class="card-text">@Html.DisplayNameFor(model => model.Вкл_питание) - @Html.DisplayFor(modelItem => item.Вкл_питание)</p>
+            <p class="card-text">@Html.DisplayNameFor(model => model.Вкл_поездка) - @Html.DisplayFor(modelItem => item.Вкл_поездка)</p>
+            <p class="card-text">@Html.DisplayNameFor(model => model.Длительность_отдыха_в_днях) - @Html.DisplayFor(modelItem => item.Длительность_отдыха_в_днях)</p>
+            <p class="card-text">@Html.DisplayNameFor(model => model.Общая_стоимость) - @Html.DisplayFor(modelItem => item.Общая_стоимость)</p>
+            @Html.ActionLink("Изменить", "Edit", new { id = item.ИД }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Удалить", "Delete", new { id = item.ИД }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    @*<tr>
+        <td>
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ночёвка.Тип_номера)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Вкл_гида)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Вкл_питание)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Вкл_ночёвка)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Вкл_поездка)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Общая_стоимость)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Длительность_отдыха_в_днях)
+        </td>
+    </tr>*@
+}

@@ -1,6 +1,6 @@
 a = 0;
 b = 1;
-c = 4;
+c = -4;
 d = 1;
 
 function y1=f1(x);
@@ -15,12 +15,12 @@ function y3=f3(x);
     y3 = f1(x) - f2(x);
 endfunction
 
-x=-5:0.001:3;
-plot(x,f3(x)); xgrid;
+x=-2.5:0.001:7.75;
+plot(x, f1(x), x, f2(x)); xgrid;
 
-x0 = -4.27;
+x0 = -2;
 x1 = fsolve(x0, f3);
-x0 = 3;
+x0 = 7;
 x2 = fsolve(x0, f3);
 result = 'x1 = ' + string(x1) + ' x2 = ' + string(x2);
 title(result)

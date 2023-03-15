@@ -1,0 +1,6 @@
+@startuml
+interface IProduct {
+    + Article : string <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+}
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+class EndProduct {
+    + Id : Guid <<get>> <<set>>
+    + Article : string <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + Compositions : IList<ProductComposition> <<get>> <<set>>
+}
+IProduct <|-- EndProduct
+@enduml

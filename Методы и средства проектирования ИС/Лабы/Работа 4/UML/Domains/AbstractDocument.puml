@@ -1,0 +1,12 @@
+@startuml
+class AbstractDocument {
+    + Id : Guid <<get>> <<set>>
+    + Comment : string <<get>> <<set>>
+    + AuthorId : Guid <<get>> <<set>>
+    + DocumentLines : IList<IDocumentLine> <<get>> <<set>>
+    + CreatedAt : ZonedDateTime <<get>> <<set>>
+    + UpdatedAt : ZonedDateTime <<get>> <<set>>
+    + GetTotal() : decimal
+}
+IDocument <|-- AbstractDocument
+@enduml

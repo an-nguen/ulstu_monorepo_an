@@ -1,0 +1,8 @@
+@startuml
+interface IDocumentLine {
+    + ProductId : Guid <<get>> <<set>>
+    + Price : decimal <<get>> <<set>>
+    + Quantity : decimal <<get>> <<set>>
+    + GetTotal() : decimal
+}
+@enduml

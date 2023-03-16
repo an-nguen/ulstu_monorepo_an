@@ -8,7 +8,7 @@ namespace ProcurementApi.Core.Domains;
 public class Purchase: AbstractDocument, IPurchase
 {
     public Guid SupplierId { get; set; }
-    public ISupplier Supplier { get; set; } = null!;
+    public Supplier Supplier { get; set; } = null!;
     public IList<IProduct> Products { get; set; } = null!;
     public IList<IProduct> Materials { get; set; } = null!;
 }

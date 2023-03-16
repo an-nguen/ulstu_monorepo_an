@@ -17,6 +17,11 @@ public class MaterialRepository: IMaterialRepository
         throw new NotImplementedException();
     }
 
+    public Task<Material> GetEntityById(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
     public Task<Material> Create(Material product)
     {
         throw new NotImplementedException();
@@ -28,6 +33,11 @@ public class MaterialRepository: IMaterialRepository
     }
 
     public Task Delete(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public IList<Material> FilterByName(string pattern)
     {
         throw new NotImplementedException();
     }

@@ -1,8 +1,0 @@
-@startuml
-class PurchaseReceipt {
-    + EndProducts : IList<IProduct> <<get>> <<set>>
-    + RawMaterials : IList<IProduct> <<get>> <<set>>
-}
-AbstractDocument <|-- PurchaseReceipt
-IPurchaseReceipt <|-- PurchaseReceipt
-@enduml

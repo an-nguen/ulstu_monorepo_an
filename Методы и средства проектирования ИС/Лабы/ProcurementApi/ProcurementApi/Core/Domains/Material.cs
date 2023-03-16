@@ -9,14 +9,13 @@ namespace ProcurementApi.Core.Domains;
 /// </summary>
 public class Material : IProduct
 {
-    [Key]
-    public Guid Id { get; set; }
+    [Key] public Guid Id { get; set; }
     public string Article { get; set; } = Empty;
-    [MaxLength(500)]
-    public required string Name { get; set; } = Empty;
-    [MaxLength(8000)]
-    public string Description { get; set; } = Empty;
+    [MaxLength(500)] public required string Name { get; set; } = Empty;
+    [MaxLength(8000)] public string Description { get; set; } = Empty;
+
     public string ProductUnit { get; set; } = Empty;
+
     // Нормы запасов
     public int StockLevel { get; set; }
 }

@@ -1,9 +1,0 @@
-@startuml
-class RawMaterial {
-    + Id : Guid <<get>> <<set>>
-    + Article : string <<get>> <<set>>
-    + Name : string <<get>> <<set>>
-    + ProductUnit : string <<get>> <<set>>
-}
-IProduct <|-- RawMaterial
-@enduml

@@ -4,4 +4,5 @@ public interface IPage<out TItem>
     where TItem : class
 {
     public IEnumerable<TItem> GetItems();
+    public IPageMetadata GetMetadata();
 }

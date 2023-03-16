@@ -1,24 +1,24 @@
 namespace ProcurementApi.Core.DTOs;
 
-public class PageResponse<TItem>
+public class PageResponse<TItem>: IPage<TItem>
     where TItem : class
 {
     private PageResponse()
     {
     }
 
-    public PageResponse(IEnumerable<TItem> items, PageMetadata metadata)
+    private PageResponse(IEnumerable<TItem> items, IPageMetadata metadata)
     {
-        Items = items;
-        Metadata = metadata;
+        _items = items;
+        _metadata = metadata;
     }
 
-    public IEnumerable<TItem> Items { get; } = null!;
-    public PageMetadata Metadata { get; } = null!;
+    private IEnumerable<TItem> _items = null!;
+    private IPageMetadata _metadata = null!;
 
     public class Builder
     {
-        private List<TItem> _items = new();
+        private readonly List<TItem> _items = new();
         private int _pageSize;
         private int _pageNumber;
 
@@ -43,10 +43,13 @@ public class PageResponse<TItem>
         }
 
         public PageResponse<TItem> Build() =>
-            new PageResponse<TItem>(_items, new PageMetadata
+            new(_items, new PageMetadata
             {
                 PageNumber = _pageNumber,
                 PageSize = _pageSize
             });
     }
+
+    public IEnumerable<TItem> GetItems() => _items;
+    public IPageMetadata GetMetadata() => _metadata;
 }

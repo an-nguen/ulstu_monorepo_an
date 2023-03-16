@@ -1,6 +1,0 @@
-@startuml
-interface IPurchaseReceipt {
-    + EndProducts : IList<IProduct> <<get>> <<set>>
-    + RawMaterials : IList<IProduct> <<get>> <<set>>
-}
-@enduml

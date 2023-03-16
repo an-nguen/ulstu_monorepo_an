@@ -7,7 +7,7 @@ public class AppDbContext : DbContext
 {
     public DbSet<Material> RawMaterials => Set<Material>();
     public DbSet<Product> EndProducts => Set<Product>();
-    public DbSet<Issue> GoodsIssueDocuments => Set<Issue>();
+    public DbSet<Expenditure> GoodsIssueDocuments => Set<Expenditure>();
     public DbSet<Purchase> PurchaseReceipts => Set<Purchase>();
     public DbSet<Composition> ProductCompositions => Set<Composition>();
     public DbSet<User> Users => Set<User>();

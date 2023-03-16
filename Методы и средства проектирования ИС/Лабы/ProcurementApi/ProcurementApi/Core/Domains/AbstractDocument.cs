@@ -9,13 +9,15 @@ public class AbstractDocument : IDocument
 {
     [Key]
     public Guid Id { get; set; }
-    public string Comment { get; set; } = Empty;
-    public Guid AuthorId { get; set; }
 
     public IList<IDocumentLine> DocumentLines { get; set; } = null!;
     
+    public Guid AuthorId { get; set; }
+
     public ZonedDateTime CreatedAt { get; set; }
     public ZonedDateTime UpdatedAt { get; set; }
-    
+
+    public IList<IDocumentLine> GetDocumentLines() => DocumentLines;
+
     public decimal GetTotal() => DocumentLines.Select(line => line.GetTotal()).Sum();
 }

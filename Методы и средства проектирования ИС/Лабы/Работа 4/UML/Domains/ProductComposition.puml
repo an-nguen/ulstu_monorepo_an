@@ -1,8 +1,0 @@
-@startuml
-class ProductComposition {
-    + Id : Guid <<get>> <<set>>
-    + EndProductId : Guid <<get>> <<set>>
-    + RawMaterialId : Guid <<get>> <<set>>
-    + Quantity : decimal <<get>> <<set>>
-}
-@enduml

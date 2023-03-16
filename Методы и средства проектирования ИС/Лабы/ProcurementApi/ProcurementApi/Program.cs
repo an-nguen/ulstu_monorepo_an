@@ -1,11 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using ProcurementApi.Controllers;
-using ProcurementApi.Controllers.Interface;
+using ProcurementApi.Controllers.Interfaces;
 using ProcurementApi.Repositories;
 using ProcurementApi.Repositories.Interfaces;
-using ProcurementApi.Services;
-using ProcurementApi.Services.Interfaces;
-using PurchaseRepository = ProcurementApi.Repositories.PurchaseRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,11 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContextPool<AppDbContext>(o => o.UseNpgsql());
 
 builder.Services.AddScoped<IMaterialRepository, MaterialRepository>();
-builder.Services.AddScoped<IMaterialService, IMaterialService>();
 builder.Services.AddScoped<IMaterialController, MaterialController>();
 
 builder.Services.AddScoped<IPurchaseRepository, PurchaseRepository>();
-builder.Services.AddScoped<IPurchaseService, PurchaseService>();
 builder.Services.AddScoped<IPurchaseController, PurchaseController>();
 
 builder.Services.AddControllers();

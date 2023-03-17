@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using NodaTime;
 using ProcurementApi.Core.Interfaces;
-using static System.String;
 
 namespace ProcurementApi.Core.Domains;
 

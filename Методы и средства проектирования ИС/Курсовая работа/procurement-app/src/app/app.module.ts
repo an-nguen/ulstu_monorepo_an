@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PurchasesComponent } from './purchases/purchases.component';
 import { MaterialsComponent } from './materials/materials.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -13,11 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PurchasesComponent,
     MaterialsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

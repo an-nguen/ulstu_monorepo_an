@@ -1,12 +1,16 @@
-#include "perf_tbl_model.hpp"
+#include "models/decl/perf_tbl_model.hpp"
+#include "domains/decl/stat_perf.hpp"
+
+
+constexpr char defaultFloatFormat = 'f';
 
 PerfTblModel::PerfTblModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
 }
 
-void PerfTblModel::addPerf(StatPerf perf) {
-    this->m_dataList.append(perf);
+void PerfTblModel::addPerf(StatPerf &perf) {
+    this->m_dataList.append(&perf);
 }
 
 int PerfTblModel::rowCount(const QModelIndex &parent) const {
@@ -25,13 +29,13 @@ QVariant PerfTblModel::data(const QModelIndex &index, int role) const {
     if (role == Qt::DisplayRole)
         switch (index.column()) {
             case 0:
-                return QString{"%1"}.arg(perf.getCount());
+                return QString{"%1"}.arg(perf->getCount());
             case 1:
-                return QString{"%1"}.arg(perf.getExpectedValue(), 0, 'g', 2);
+                return QString{"%1"}.arg(perf->getExpectedValue(), 0, defaultFloatFormat, 2);
             case 2:
-                return QString{"%1"}.arg(perf.getVariance(), 0, 'g', 2);
+                return QString{"%1"}.arg(perf->getVariance(), 0, defaultFloatFormat, 2);
             case 3:
-                return QString{"%1"}.arg(perf.getStandardDeviation(), 0, 'g', 2);
+                return QString{"%1"}.arg(perf->getStandardDeviation(), 0, defaultFloatFormat, 2);
             default:
                 return {};
         }
@@ -56,4 +60,16 @@ QVariant PerfTblModel::headerData(int section, Qt::Orientation orientation, int 
         default:
             return QAbstractItemModel::headerData(section, orientation, role);
     }
+}
+
+StatPerf *PerfTblModel::getPerf(qsizetype index) {
+    return this->m_dataList[index];
+}
+
+PerfTblModel::~PerfTblModel() {
+    qDeleteAll(this->m_dataList);
+}
+
+const QList<StatPerf *> &PerfTblModel::getPerfList() const {
+    return m_dataList;
 }

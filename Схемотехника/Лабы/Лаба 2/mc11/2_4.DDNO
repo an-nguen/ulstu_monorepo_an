@@ -1,0 +1,68 @@
+********************************************************************************
+***                       Micro-Cap 11.2.0.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                            Dynamic DC of 2_4                             ***
+***                           28.10.2023 16:32:04                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1             2.000   2             4.789m  3             4.789m 
+
+DC Operating Point Inductor Current
+===================================
+Inductor     Current 
+L1          798.084u 
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:             V1.RS            R1            R2
+V                 -798.084n        1.995         4.789m
+Power DC Terms:
+PD                 636.939p        1.592m        3.822u
+
+DC Pin Currents:
+Ir                -798.084u      798.084u      798.084u
+
+Device Variables:
+tc1                  0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000 
+
+
+
+Operating Point for Devices of Type Inductor
+============================================
+Instance:                L1
+V                    0.000 
+Power DC Terms:
+PS                   0.000 
+
+DC Pin Currents:
+Il                 798.084u
+
+Device Variables:
+ic                   0.000 
+
+
+
+Operating Point for Devices of Type Sine Source
+===============================================
+Instance:                V1
+Using model:        GENERAL
+V                    2.000 
+Power DC Terms:
+PG                   1.596m
+
+DC Pin Currents:
+ISource           -798.084u
+
+

@@ -1,0 +1,63 @@
+********************************************************************************
+***                       Micro-Cap 11.2.0.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                            Dynamic AC of 2_1                             ***
+***                           29.10.2023 21:35:58                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+AC Voltages at Frequency=50 (Mag)
+=================================
+Node         Voltage 
+1                  1 
+
+
+AC values for Resistor (Mag)
+============================
+Instance:             V1.RS
+
+Power AC Terms:
+PD                  12.337f
+
+AC Pin Currents:
+Ir                  157.08u
+
+Device Variables:
+tc1                  0.000 
+tc2                  0.000 
+
+
+
+AC values for Capacitor (Mag)
+=============================
+Instance:                C1
+
+Power AC Terms:
+PS                   78.54u
+
+AC Pin Currents:
+Ic                  157.08u
+
+Device Variables:
+ic                   0.000 
+
+
+
+AC values for Sine Source (Mag)
+===============================
+Instance:                V1
+Using model:        GENERAL
+
+Power AC Terms:
+PG                   78.54u
+
+AC Pin Currents:
+ISource             157.08u
+
+

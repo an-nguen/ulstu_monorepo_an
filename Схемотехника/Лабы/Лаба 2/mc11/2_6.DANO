@@ -1,0 +1,77 @@
+********************************************************************************
+***                       Micro-Cap 11.2.0.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                            Dynamic AC of 2_6                             ***
+***                            30.10.2023 0:20:39                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+AC Voltages at Frequency=50 (Mag, Radians)
+==========================================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1                5,0  2        1.892,1.143  3         1.89,1.183 
+
+
+AC values for Resistor (Mag, Radians)
+=====================================
+Instance:                       R1                   R2
+
+Power AC Terms:
+PD                       41.473m,0           685.381u,0
+
+AC Pin Currents:
+Ir               18.215m,-387.646m    18.512m,-388.284m
+
+Device Variables:
+tc1                         0.000                0.000 
+tc2                         0.000                0.000 
+
+
+
+AC values for Inductor (Mag, Radians)
+=====================================
+Instance:                       L1
+
+Power AC Terms:
+PS                   17.495m,1.571
+
+AC Pin Currents:
+Il                   18.512m,2.753
+
+Device Variables:
+ic                          0.000 
+
+
+
+AC values for Capacitor (Mag, Radians)
+======================================
+Instance:                       C1
+
+Power AC Terms:
+PS                 281.012u,-1.571
+
+AC Pin Currents:
+Ic                  297.124u,2.714
+
+Device Variables:
+ic                          0.000 
+
+
+
+AC values for SPICE Source (Mag, Radians)
+=========================================
+Instance:                      V1
+
+Power AC Terms:
+PG               45.538m,387.646m
+
+AC Pin Currents:
+ISource             18.215m,2.754
+
+

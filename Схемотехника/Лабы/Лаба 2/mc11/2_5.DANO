@@ -1,0 +1,77 @@
+********************************************************************************
+***                       Micro-Cap 11.2.0.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                            Dynamic AC of 2_5                             ***
+***                           29.10.2023 23:11:57                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+AC Voltages at Frequency=120 (Mag)
+==================================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1                  5  2                  5  3              5.262 
+
+
+AC values for Resistor (Mag)
+============================
+Instance:                R1
+
+Power AC Terms:
+PD                   1.967u
+
+AC Pin Currents:
+Ir                 991.813u
+
+Device Variables:
+tc1                  0.000 
+tc2                  0.000 
+
+
+
+AC values for Inductor (Mag)
+============================
+Instance:                L1
+
+Power AC Terms:
+PS                 129.795u
+
+AC Pin Currents:
+Il                 991.813u
+
+Device Variables:
+ic                   0.000 
+
+
+
+AC values for Capacitor (Mag)
+=============================
+Instance:                C1
+
+Power AC Terms:
+PS                   2.609m
+
+AC Pin Currents:
+Ic                 991.813u
+
+Device Variables:
+ic                   0.000 
+
+
+
+AC values for SPICE Source (Mag)
+================================
+Instance:               V1
+
+Power AC Terms:
+PG                   2.48m
+
+AC Pin Currents:
+ISource           991.813u
+
+

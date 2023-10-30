@@ -1,0 +1,103 @@
+********************************************************************************
+***                       Micro-Cap 11.2.0.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                            Dynamic AC of 2_7                             ***
+***                           30.10.2023 14:29:51                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+AC Voltages at Frequency=100 (Mag)
+==================================
+Node         Voltage  Node         Voltage  Node         Voltage 
+1                  5  2                  5  3                  5 
+4              4.191  5              1.899  6              1.899 
+7              1.899  8              1.899  9           916.795m 
+10          916.795m 
+
+
+AC values for Resistor (Mag)
+============================
+Instance:                R1            R2            R3            R4            R5
+
+Power AC Terms:
+PD                  23.043n       18.435n       93.325n      121.322n       16.798n
+
+AC Pin Currents:
+Ir                 240.016u      192.013u      432.029u      432.029u      129.609u
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:                R6            R7            R8        C1.int        C4.int
+
+Power AC Terms:
+PD                  82.312n       18.478n       83.992n        8.783p        1.803p
+
+AC Pin Currents:
+Ir                 302.421u      129.609u      432.029u        4.191p        1.899p
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:            R4.int        R5.int        R6.int        C5.int        C6.int
+
+Power AC Terms:
+PD                   1.803p        1.803p        1.803p      420.257f      420.257f
+
+AC Pin Currents:
+Ir                   1.899p        1.899p        1.899p      916.795f      916.795f
+
+Device Variables:
+tc1                  0.000         0.000         0.000         0.000         0.000 
+tc2                  0.000         0.000         0.000         0.000         0.000 
+
+
+
+AC values for Capacitor (Mag)
+=============================
+Instance:                C1            C2            C3            C4            C5
+
+Power AC Terms:
+PS                 123.347u       20.558u       30.837u      495.103u      212.187u
+
+AC Pin Currents:
+Ic                 304.962u       50.827u        76.24u      432.029u      432.029u
+
+Device Variables:
+ic                   0.000         0.000         0.000         0.000         0.000 
+
+
+Instance:                C6            C7
+
+Power AC Terms:
+PS                  92.419u      105.622u
+
+AC Pin Currents:
+Ic                 201.614u      230.416u
+
+Device Variables:
+ic                   0.000         0.000 
+
+
+
+AC values for SPICE Source (Mag)
+================================
+Instance:               V1
+
+Power AC Terms:
+PG                   1.08m
+
+AC Pin Currents:
+ISource           432.029u
+
+

@@ -5,4 +5,4 @@ psig=psigmf(x,[15 0.5 -15 0.7]);
 dsig=dsigmf(x,[15 0.1 15 0.3]);
 scf();clf();
 plot2d(x,[sig1 sig2 psig dsig],leg="sig1@sig2@psig@dsig");
-xtitle("Sigmoidals Member Functions Examples","x","mu(x)");
+xtitle("График сигмодной ФП", "x", "mu(x)");
